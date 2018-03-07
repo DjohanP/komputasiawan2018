@@ -6,9 +6,9 @@ sudo apt-get -y update
 #wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
 #apt-get install -y esl-erlang
 #apt-get install -y elixir
-#yes | mix local.hex
-#yes | mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
-#yes | mix phx.new /home/vagrant/hello2
+#mix local.hex
+#mix archive.install https://github.com/phoenixframework/archives/raw/master/phx_new.ez
+#mix phx.new /home/vagrant/hello2
 
 #3
 #4
