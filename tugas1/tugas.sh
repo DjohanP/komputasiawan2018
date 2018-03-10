@@ -11,6 +11,17 @@ sudo apt-get -y update
 #mix phx.new /home/vagrant/hello2
 
 #3
+#PHP 7.2
+sudo add-apt-repository ppa:ondrej/php
+sudo apt-get update
+sudo apt-get install php7.2-cli
+# MySQL
+sudo apt-get install mysql-server
+mysql_secure_installation
+systemctl status mysql.service
+mysqladmin -p -u root version #test MySQL
+
+
 #4
 sudo apt-get install -y squid
 sudo apt-get install -y bind9
