@@ -59,55 +59,56 @@ sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
 	setelah melakukan provioning, clone https://github.com/fathoniadi/pelatihan-laravel.git pada folder yang sama dengan vagrantfile di komputer host. Setelah itu sinkronisasi folder pelatihan-laravel host ke vagrant ke **/var/www/web** dan jangan lupa install vendor laravel agar dapat dijalankan. Setelah itu setting root document nginx ke **/var/www/web**. webserver VM harus dapat diakses pada port 8080 komputer host dan mysql pada vm dapat diakses pada port 6969 komputer host
 
 SOLUSI
+
 Langkah 1
 ```bash
-	Pada Folder utama
+Pada Folder utama
 
-	git clone https://github.com/fathoniadi/pelatihan-laravel.git
+git clone https://github.com/fathoniadi/pelatihan-laravel.git
 ```
 Langkah 2
 ```bash
-	Pada Vagrantfile
+Pada Vagrantfile
 
-	config.vm.synced_folder "pelatihan-laravel/", "/var/www/web"
+config.vm.synced_folder "pelatihan-laravel/", "/var/www/web"
 ```
 Langkah 3
 ```bash
-	Setelah masuh vagrant dengan "vagrant ssh"
+Setelah masuh vagrant dengan "vagrant ssh"
 
-	sudo nano /etc/nginx/site-enabled/default
-	ubah menjadi
+sudo nano /etc/nginx/site-enabled/default
+ubah menjadi
 
 	server {
-    listen 80 default_server;
-    listen [::]:80 default_server ipv6only=on;
+	listen 80 default_server;
+	listen [::]:80 default_server ipv6only=on;
 
-    root /var/www/web/public;
-    index index.php index.html index.htm;
+	root /var/www/web/public;
+	index index.php index.html index.htm;
 
-    server_name _;
+	server_name _;
 
-    location / {
-        try_files $uri $uri/ /index.php?$query_string;
-    }
-    
-    location ~ \.php$ {
-        include snippets/fastcgi-php.conf;
-        fastcgi_pass unix:/run/php/php7.2-fpm.sock;
-    }
+	location / {
+		try_files $uri $uri/ /index.php?$query_string;
+	}
 
-    location ~ /\.ht {
-        deny all;
-    }
+	location ~ \.php$ {
+		include snippets/fastcgi-php.conf;
+		fastcgi_pass unix:/run/php/php7.2-fpm.sock;
+	}
+
+	location ~ /\.ht {
+		deny all;
+	}
 }
 ```
 
 Langkah 4
 ```bash
-	cd /var/www/web
-	composer update
-	php artisan key:generate
-	php artisan serve
+cd /var/www/web
+composer update
+php artisan key:generate
+php artisan serve
 ```
 	
 4. Buat vagrant virtualbox dan lakukan provisioning install:
@@ -115,8 +116,8 @@ Langkah 4
 	2. Bind9
 Solusi
 ```bash
-	sudo apt-update
-	sudo apt-get install -y squid
-	sudo apt-get install -y bind9
+sudo apt-update
+sudo apt-get install -y squid
+sudo apt-get install -y bind9
 ```
 	
