@@ -71,7 +71,10 @@ Langkah 2
 ```bash
 Pada Vagrantfile
 
-config.vm.synced_folder "pelatihan-laravel/", "/var/www/web"
+config.vm.network "forwarded_port", guest: 80, host: 8080
+config.vm.network "forwarded_port", guest: 3306, host: 6969
+
+config.vm.synced_folder "pelatihan-laravel/", "/var/www/web", id:"vagrant-root",owner:"vagrant",group:"www-data",mount_options:["dmode=775","fmode=664"]
 ```
 Langkah 3
 ```bash
@@ -102,12 +105,15 @@ ubah menjadi
 		deny all;
 	}
 }
+
+sudo /etc/init.d/nginx restart
 ```
 
 Langkah 4
 ```bash
 cd /var/www/web
-composer update
+composer update -vvv
+cp .env.example .env
 php artisan key:generate
 php artisan serve
 ```

@@ -22,10 +22,7 @@ sudo apt-get install -y php7.2-cli
 sudo apt install -y php7.2-fpm php7.2-mysql
 sudo apt install -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-xmlrpc php7.2-xml php7.2-zip
 sudo systemctl restart php7.2-fpm
-cd /var/www/web2
-composer update -vvv
-cp .env.example .env
-php artisan key:generate
+
 #nginx
 sudo apt-get install -y nginx
 sudo service nginx start
@@ -40,6 +37,12 @@ sudo apt-get install -y curl php-cli php-mbstring git unzip
 cd ~
 curl -sS https://getcomposer.org/installer -o composer-setup.php
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
+
+cd /var/www/web2
+composer update -vvv
+cp .env.example .env
+php artisan key:generate
+php artisan serve
 
 #4
 sudo apt-get install -y squid
