@@ -13,6 +13,8 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 cd /home/vagrant/hello2/assets
 npm install
+cd /home/vagrant/hello2
+mix phx.server
 #3
 #php
 sudo apt install software-properties-common

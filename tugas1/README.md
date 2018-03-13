@@ -3,13 +3,17 @@
 ![](https://blog.theodo.fr/wp-content/uploads/2017/07/Vagrant.png)
 
 ### K. Tugas
-1. Buat vagrant virtualbox dan buat user 'awan' dengan password 'buayakecil'.
+1. Buat vagrant virtualbox dan buat user 'awan' dengan password 'buayakecil'
+
 SOLUSI
+
 ```bash
 useradd awan -p $(echo buayakecil | openssl passwd -1 -stdin) -d /home/awankecil -m
 ```
 2. Buat vagrant virtualbox dan lakukan provisioning install Phoenix Web Framework
+
 SOLUSI
+
 ```bash
 sudo echo "nameserver 202.46.129.2" | sudo tee -a /etc/resolv.conf
 sudo apt-get -y update
@@ -23,6 +27,8 @@ sudo apt-get install -y nodejs
 sudo apt-get install -y npm
 cd /home/vagrant/hello2/assets
 npm install
+cd /home/vagrant/hello2
+mix phx.server
 ```
 3. Buat vagrant virtualbox dan lakukan provisioning install:
 	1. php
@@ -121,7 +127,9 @@ php artisan serve
 4. Buat vagrant virtualbox dan lakukan provisioning install:
 	1. Squid proxy
 	2. Bind9
+
 Solusi
+
 ```bash
 sudo apt-update
 sudo apt-get install -y squid
