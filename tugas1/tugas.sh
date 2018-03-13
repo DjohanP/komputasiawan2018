@@ -15,9 +15,15 @@ cd /home/vagrant/hello2/assets
 npm install
 #3
 #php
+sudo apt install software-properties-common
 echo "\n" | sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get install -y php7.2-cli
+sudo apt install -y php7.2-fpm php7.2-mysql
+sudo apt install -y php7.2-curl php7.2-gd php7.2-mbstring php7.2-xmlrpc php7.2-xml php7.2-zip
+sudo systemctl restart php7.2-fpm
+
+
 #nginx
 sudo apt-get install -y nginx
 sudo service nginx start
