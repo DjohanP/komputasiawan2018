@@ -1,7 +1,7 @@
 #1
 #useradd awan -p $(echo buayakecil | openssl passwd -1 -stdin) -d /home/awankecil -m
 #2
-sudo echo "nameserver 202.46.129.2" | sudo tee -a /etc/resolv.conf
+#sudo echo "nameserver 202.46.129.2" | sudo tee -a /etc/resolv.conf
 sudo apt-get -y update
 #wget https://packages.erlang-solutions.com/erlang-solutions_1.0_all.deb && dpkg -i erlang-solutions_1.0_all.deb
 #apt-get install -y esl-erlang
