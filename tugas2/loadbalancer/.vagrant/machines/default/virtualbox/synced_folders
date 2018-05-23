@@ -1,1 +1,1 @@
-{"virtualbox":{"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/honeycomb/kuliah/repo/komputasiawan2018/tugas2/loadbalancer","disabled":false,"__vagrantfile":true}}}
+{"virtualbox":{"/var/www/html":{"guestpath":"/var/www/html","hostpath":"/home/honeycomb/kuliah/repo/komputasiawan2018/tugas2/loadbalancer/algorithm","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/honeycomb/kuliah/repo/komputasiawan2018/tugas2/loadbalancer","disabled":false,"__vagrantfile":true}}}

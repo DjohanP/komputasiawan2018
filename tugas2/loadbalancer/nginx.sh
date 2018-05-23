@@ -9,6 +9,9 @@ sudo apt-get -y install php7.2-fpm php7.2-cgi
 
 sudo apt-get -y install nginx
 
+sudo rm -rf /etc/nginx/site-enabled/*
+sudo mv /var/www/html/* /etc/nginx/sites-enabled/
+#sudo ln -s ./algorithm/least_conn.conf /etc/nginx/site-enabled
 sudo nginx -t
 sudo service php7.2-fpm start
 sudo service nginx restart
