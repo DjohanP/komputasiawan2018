@@ -2,6 +2,9 @@
 
 ### Tugas
 1. Tugas 1 : [Tugas 1](/tugas1)
+2. Tugas 2 : [Tugas 2](/tugas2)
+3. Tugas 3 : [Tugas 3](/tugas3)
+4. Tugas 4 : [Tugas 4](/tugas4)
 
 
 ### Anggota Kelompok
